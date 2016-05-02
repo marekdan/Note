@@ -1,0 +1,23 @@
+body
+{
+    background: url(../img/background.jpg);
+}
+
+.myNav
+{
+    width: 70%;
+    margin: 10px auto auto auto;
+}
+
+.formRegister
+{
+    width: 500px;
+    margin: 50px auto auto auto;
+    text-align: center;
+}
+
+.errorInfo
+{
+    text-align: center;
+    color: black;
+}

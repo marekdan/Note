@@ -1,5 +1,5 @@
 <?php
 
-class Note{
+class Note {
 
 }
