@@ -1,5 +1,5 @@
 <?php
-ob_start();
+
 require_once('./src/connection.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo '<h1 class="errorInfo">Incorrect email or password, <small class="errorInfo">please try again</small></h1>';
     }
 }
-ob_end_flush();
+
 ?>
 
 <form class="formRegister" action="login.php" method="POST">
@@ -30,3 +30,5 @@ ob_end_flush();
 
     <input type="submit" value="Sign In">
 </form>
+
+<? require_once('./src/footer.php');

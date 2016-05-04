@@ -25,11 +25,12 @@ class Note {
 
     static private $connection;
 
-
+    //setting connection to db
     static public function SetConnection(mysqli $newConnection) {
         Note::$connection = $newConnection;
     }
 
+    //creating new note object and saving it to db
     static public function CreateNote($newTitle, $newDescription, $newColor, $newDate, $newUserId) {
 
         $sql = "INSERT INTO Note(title, description, user_id, note_date, note_color) VALUES ('$newTitle', '$newDescription', '$newUserId', '$newDate', '$newColor')";
@@ -43,6 +44,7 @@ class Note {
         return false;
     }
 
+    //loading notes by date and owned by current user
     static public function LoadNotesByDate($userId, $date) {
         $notes = [];
         $sql = "SELECT * FROM Note WHERE user_id = '$userId' AND note_date = '$date'";

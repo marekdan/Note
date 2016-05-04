@@ -18,10 +18,12 @@ class User {
 
     static private $connection;
 
+    //setting connection to db
     static public function SetConnection(mysqli $newConnection) {
         User::$connection = $newConnection;
     }
 
+    //creating new user object and saving it to db
     static public function RegisterUser($newName, $newEmail, $newEmail2, $password1, $password2) {
         if ($password1 !== $password2) {
             return false;
@@ -52,6 +54,7 @@ class User {
         return false;
     }
 
+    //signing in user
     static public function LogInUser($email, $password) {
         $sql = "SELECT * FROM Users WHERE email like '$email'";
         $result = self::$connection->query($sql);
@@ -70,6 +73,7 @@ class User {
         return false;
     }
 
+    //loading user data by id
     static public function getUserById($byId) {
         $sql = "SELECT * FROM Users WHERE id='$byId'";
         $result = self::$connection->query($sql);
@@ -87,8 +91,8 @@ class User {
 
     public function __construct($newId, $newName, $newEmail) {
         $this->id = intval($newId);
-        $this->name = $newName;
-        $this->email = $newEmail;
+        $this->setName($newName);
+        $this->setEmail($newEmail);
     }
 
     public function getId() {
@@ -101,6 +105,14 @@ class User {
 
     public function getEmail() {
         return $this->email;
+    }
+
+    public function setName($newName) {
+        return $this->name = $newName;
+    }
+
+    public function setEmail($newEmail) {
+        return $this->email = $newEmail;
     }
 
 }

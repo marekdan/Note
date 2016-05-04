@@ -1,7 +1,7 @@
 <?php
-ob_start();
 
 require_once('./src/connection.php');
+
 if (!isset($_SESSION['userId'])) {
     header('Location: login.php');
 }
@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-ob_end_flush();
 ?>
 
 <form class="formRegister" action="addNote.php" method="POST">
@@ -46,3 +45,5 @@ ob_end_flush();
 
     <input type="submit" class="btn btn-default" value="Add note">
 </form>
+
+<? require_once('./src/footer.php');

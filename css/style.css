@@ -27,35 +27,6 @@ body {
     margin: 10px auto auto auto;
 }
 
-.notesTitle {
-    width: 35%;
-    height: 100px;
-    background-color: white;
-    color: black;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.notes {
-    width: 35%;
-    height: 100%;
-    background-color: white;
-    color: black;
-    display: inline-block;
-}
-
-#todayNotesTitle{
-    margin-left: 15%;
-}
-
-#todayNotes {
-    margin-left: 15%;
-}
-
-#tomorrowNotes {
-
-}
-
 .addNote {
     width: 70%;
     height: 40px;
@@ -90,18 +61,18 @@ body {
     display: inline-block;
 }
 
+.note{
+    display: inline-block;
+    width: 24%;
+    text-align: left;
+    margin-top: 5px;
+}
+
 .noteTitle{
     background-color: blueviolet;
 }
 
 .noteDescription{
-    background-color: brown;
+    background-color: red;
     display: none;
-}
-
-.note{
-    display: inline-block;
-    width: 200px;
-    text-align: left;
-    margin-top: 5px;
 }
