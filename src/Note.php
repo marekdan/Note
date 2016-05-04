@@ -43,30 +43,14 @@ class Note {
         return false;
     }
 
-    static public function LoadTodayNotes($userId) {
+    static public function LoadNotesByDate($userId, $date) {
         $notes = [];
-        $today = date('Y-m-d');
-        $sql = "SELECT * FROM Note WHERE user_id = '$userId' AND date = '$today'";
+        $sql = "SELECT * FROM Note WHERE user_id = '$userId' AND note_date = '$date'";
         $result = self::$connection->query($sql);
         if ($result !== false) {
             while ($row = $result->fetch_assoc()) {
-                $notes[] = $row;
-            }
-
-            return $notes;
-        }
-
-        return false;
-    }
-
-    static public function LoadTomorrowNotes($userId) {
-        $notes = [];
-        $tomorrow = mktime(0, 0, 0, date("Y"), date("m"), date("d") + 1);
-        $sql = "SELECT * FROM Note WHERE user_id = '$userId' AND date = '$tomorrow'";
-        $result = self::$connection->query($sql);
-        if ($result !== false) {
-            while ($row = $result->fetch_assoc()) {
-                $notes[] = $row;
+                $note = new Note($row['id'], $row['title'], $row['description'], $row['note_color'], $row['note_date'], $userId);
+                $notes[] = $note;
             }
 
             return $notes;

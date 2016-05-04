@@ -7,12 +7,8 @@ require_once('./src/connection.php');
 </h1>
 
 <a href="addNote.php"><div class="btn btn-default addNote">Add note</div></a>
+<a href="showNotes.php"><div class="btn btn-default addNote">Shownotes</div></a>
 
-<div class="notes" id="todayNotes">
-Today
-</div>
-
-<div class="notes" id="tomorrowNotes">
-Tomorrow
-</div>
-
+<?php
+require_once('./showNotes.php');
+?>

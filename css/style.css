@@ -27,13 +27,25 @@ body {
     margin: 10px auto auto auto;
 }
 
-.notes {
+.notesTitle {
     width: 35%;
-    height: 1000px;
+    height: 100px;
     background-color: white;
     color: black;
     display: inline-block;
     margin-top: 10px;
+}
+
+.notes {
+    width: 35%;
+    height: 100%;
+    background-color: white;
+    color: black;
+    display: inline-block;
+}
+
+#todayNotesTitle{
+    margin-left: 15%;
 }
 
 #todayNotes {
@@ -51,4 +63,45 @@ body {
     background-color: white;
     color: black;
     text-align: center;
+}
+
+.content{
+    background-color: white;
+    color: black;
+    margin: 10px 15%;
+    width: 70%;
+    height: 100%;
+}
+
+#notesForToday{
+    background-color: blue;
+    color: black;
+    width: 49%;
+    float: left;
+    display: inline-block;
+    text-align: center;
+}
+
+#notesForTomorrow{
+    background-color: aqua;
+    color: black;
+    width: 49%;
+    float: right;
+    display: inline-block;
+}
+
+.noteTitle{
+    background-color: blueviolet;
+}
+
+.noteDescription{
+    background-color: brown;
+    display: none;
+}
+
+.note{
+    display: inline-block;
+    width: 200px;
+    text-align: left;
+    margin-top: 5px;
 }
