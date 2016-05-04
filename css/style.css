@@ -1,23 +1,54 @@
-body
-{
+body {
     background: url(../img/background.jpg);
 }
 
-.myNav
-{
+.myNav {
     width: 70%;
     margin: 10px auto auto auto;
 }
 
-.formRegister
-{
+.formRegister {
     width: 500px;
     margin: 50px auto auto auto;
     text-align: center;
 }
 
-.errorInfo
-{
+.errorInfo {
     text-align: center;
     color: black;
+    background-color: crimson;
+}
+
+.info {
+    text-align: center;
+    color: black;
+    background-color: white;
+    width: 70%;
+    margin: 10px auto auto auto;
+}
+
+.notes {
+    width: 35%;
+    height: 1000px;
+    background-color: white;
+    color: black;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#todayNotes {
+    margin-left: 15%;
+}
+
+#tomorrowNotes {
+
+}
+
+.addNote {
+    width: 70%;
+    height: 40px;
+    margin: 10px auto auto 15%;
+    background-color: white;
+    color: black;
+    text-align: center;
 }

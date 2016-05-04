@@ -8,6 +8,7 @@ session_start();
 require_once(dirname(__FILE__) . '/config.php');
 require_once(dirname(__FILE__) . '/header.php');
 require_once(dirname(__FILE__) . '/User.php');
+require_once(dirname(__FILE__) . '/Note.php');
 
 //setting connection to db
 $conn = new mysqli($dbHost, $dbUsername, $dbPassword, $dbBaseName);
@@ -19,3 +20,4 @@ if ($conn->connect_errno) {
 }
 
 User::SetConnection($conn);
+Note::SetConnection($conn);

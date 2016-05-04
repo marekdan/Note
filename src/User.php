@@ -31,6 +31,9 @@ class User {
             return false;
         }
 
+        $password1 = trim($password1);
+        $newEmail = trim($newEmail);
+
         $options = [
             'cost' => 11,
             'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM)
@@ -49,7 +52,7 @@ class User {
         return false;
     }
 
-    static public function logInUser($email, $password) {
+    static public function LogInUser($email, $password) {
         $sql = "SELECT * FROM Users WHERE email like '$email'";
         $result = self::$connection->query($sql);
         if ($result !== false) {
@@ -77,16 +80,6 @@ class User {
 
                 return $user;
             }
-        }
-
-        return false;
-    }
-
-    static public function deleteUser($userId) {
-        $sql = "DELETE FROM Users WHERE id='$userId'";
-        $result = self::$connection->query($sql);
-        if ($result === true) {
-            return true;
         }
 
         return false;

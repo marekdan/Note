@@ -3,7 +3,7 @@ ob_start();
 require_once('./src/connection.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $user = User::logInUser($_POST['email'], $_POST['password']);
+    $user = User::LogInUser($_POST['email'], $_POST['password']);
     if ($user !== false) {
         $_SESSION['userId'] = $user->getId();
         header('Location: index.php');
