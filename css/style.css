@@ -105,14 +105,19 @@ body {
     line-height: 75px;
 }
 
-.editButton{
+.editButton {
     float: right;
 }
 
-.invisible{
+.invisible {
     display: none;
 }
 
-.visible{
+.visible {
     display: block;
+}
+
+.changeForm {
+    display: inline-block;
+    float: right;
 }

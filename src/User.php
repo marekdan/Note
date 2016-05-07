@@ -93,6 +93,28 @@ class User {
         return false;
     }
 
+    //name update to db
+    public function updateName() {
+        $sql = "UPDATE Users SET name='$this->name' WHERE id ='$this->id'";
+        $result = self::$connection->query($sql);
+        if ($result === true) {
+            return true;
+        }
+
+        return false;
+    }
+
+    //email update to db
+    public function updateEmail() {
+        $sql = "UPDATE Users SET email='$this->email' WHERE id ='$this->id'";
+        $result = self::$connection->query($sql);
+        if ($result === true) {
+            return true;
+        }
+
+        return false;
+    }
+
     public function __construct($newId, $newName, $newEmail) {
         $this->id = intval($newId);
         $this->setName($newName);
