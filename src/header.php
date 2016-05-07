@@ -9,7 +9,6 @@
     </title>
 </head>
 <body>
-<? ob_start(); ?>
 <div class="navbar navbar-default navbar-static-top myNav">
     <a class="navbar-brand" href="index.php">Your notes</a>
     <? if (!isset($_SESSION['userId'])): ?>

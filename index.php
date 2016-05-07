@@ -23,4 +23,3 @@ if (!isset($_SESSION['userId'])):
 endif;
 
 require_once('./src/footer.php');
-?>

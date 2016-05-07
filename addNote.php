@@ -1,5 +1,7 @@
 <?php
 
+ob_start();
+
 require_once('./src/connection.php');
 
 if (!isset($_SESSION['userId'])) {
@@ -46,4 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="submit" class="btn btn-default" value="Add note">
 </form>
 
-<? require_once('./src/footer.php');
+<?php
+
+require_once('./src/footer.php');
+
+ob_end_flush();
