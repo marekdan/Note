@@ -36,7 +36,7 @@ body {
     text-align: center;
 }
 
-.content{
+.content {
     background-color: white;
     color: black;
     margin: 10px 15%;
@@ -44,7 +44,7 @@ body {
     height: 100%;
 }
 
-#notesForToday{
+#notesForToday {
     background-color: blue;
     color: black;
     width: 49%;
@@ -53,7 +53,7 @@ body {
     text-align: center;
 }
 
-#notesForTomorrow{
+#notesForTomorrow {
     background-color: aqua;
     color: black;
     width: 49%;
@@ -61,18 +61,58 @@ body {
     display: inline-block;
 }
 
-.note{
+.note {
     display: inline-block;
     width: 24%;
     text-align: left;
     margin-top: 5px;
 }
 
-.noteTitle{
+.noteTitle {
     background-color: blueviolet;
 }
 
-.noteDescription{
+.noteDescription {
     background-color: red;
     display: none;
+}
+
+.profile {
+    background-color: white;
+}
+
+.photoContainer {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    float: left;
+}
+
+.profilePhoto {
+    width: 200px;
+    height: 200px;
+}
+
+.profileInfo {
+    height: 200px;
+    width: calc(100% - 200px);
+    background-color: aquamarine;
+    display: inline-block;
+    float: right;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+    line-height: 75px;
+}
+
+.editButton{
+    float: right;
+}
+
+.invisible{
+    display: none;
+}
+
+.visible{
+    display: block;
 }

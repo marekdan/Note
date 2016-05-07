@@ -25,6 +25,13 @@ class User {
 
     //creating new user object and saving it to db
     static public function RegisterUser($newName, $newEmail, $newEmail2, $password1, $password2) {
+
+        $newName = trim($newName);
+        $password1 = trim($password1);
+        $password2 = trim($password2);
+        $newEmail = trim($newEmail);
+        $newEmail2 = trim($newEmail2);
+
         if ($password1 !== $password2) {
             return false;
         }
@@ -32,9 +39,6 @@ class User {
         if ($newEmail !== $newEmail2) {
             return false;
         }
-
-        $password1 = trim($password1);
-        $newEmail = trim($newEmail);
 
         $options = [
             'cost' => 11,
