@@ -20,9 +20,9 @@ $currentUser = User::getUserById($userId);
                 <? echo $currentUser->getName() ?>
                 <div id="changeName" class="btn btn-default editButton visible">change</div>
 
-                <form id="changeNameForm" class="changeForm invisible" action="account.php" method="POST">
+                <form id="changeNameForm" class="changeForm invisible">
                     <label>
-                        <input type="text" name="name">
+                        <input id="newName" type="text" name="name">
                     </label>
                     <input type="hidden" name="actionType" value="nameChange">
                     <input id="saveName" class="btn btn-default editButton" type="submit" value="save">
@@ -50,13 +50,11 @@ $currentUser = User::getUserById($userId);
 if ($_SERVER['REQUEST_METHOD'] === "POST" && $_POST['actionType'] === 'nameChange') {
     $currentUser->setName($_POST['name']);
     $currentUser->updateName();
-    header('Location: account.php');
 }
 
 if ($_SERVER['REQUEST_METHOD'] === "POST" && $_POST['actionType'] === 'emailChange') {
     $currentUser->setEmail($_POST['email']);
     $currentUser->updateEmail();
-    header('Location: account.php');
 }
 
 require_once('./src/footer.php');
