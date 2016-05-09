@@ -84,7 +84,29 @@ $(function () {
     });
 
     saveEmail.on('click', function () {
-        console.log('save email click')
-    });
+        event.preventDefault();
+        console.log('save email click');
+        var newEmail = $('#newEmail').val();
 
+        var toUpdate = {};
+        toUpdate.newEmail = newEmail;
+
+        $.ajax({
+            url: 'api/apiUser.php',
+            type: 'PUT',
+            data: toUpdate,
+            success: function (result) {
+                if (result.result == 'success')
+                    console.log('update success: ' + result.message)
+                else
+                    console.log('update error: ' + result.message);
+            },
+            error: function (result, status, error) {
+                console.log('ajax error:' + error)
+            },
+            complete: function () {
+                console.log('update complete')
+            }
+        });
+    });
 });

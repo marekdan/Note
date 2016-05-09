@@ -47,16 +47,6 @@ $currentUser = User::getUserById($userId);
     </div>
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] === "POST" && $_POST['actionType'] === 'nameChange') {
-    $currentUser->setName($_POST['name']);
-    $currentUser->updateName();
-}
-
-if ($_SERVER['REQUEST_METHOD'] === "POST" && $_POST['actionType'] === 'emailChange') {
-    $currentUser->setEmail($_POST['email']);
-    $currentUser->updateEmail();
-}
-
 require_once('./src/footer.php');
 
 ob_end_flush();
